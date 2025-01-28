@@ -11,7 +11,7 @@ def create_app(test_config=None):
     # enable cors
     CORS(app)
     # configure database
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:postgres@localhost:5432/larissas_adventures'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:postgres@localhost:5433/larissas_adventures'
 
     db.init_app(app)
     migrate.init_app(app, db)
