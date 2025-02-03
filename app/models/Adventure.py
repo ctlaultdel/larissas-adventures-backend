@@ -6,7 +6,7 @@ class Adventure(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String, nullable=False)
     img = db.Column(db.LargeBinary, nullable=False)
-    url = db.Column(db.Text, nullable=True)
+    path = db.Column(db.Text, nullable=True)
     public = db.Column(db.Boolean, default='true')
 
     def to_dict(self):
@@ -16,7 +16,7 @@ class Adventure(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "url": self.url,
+            "path": self.path,
             "img": self.convert_base64(),
             "public": self.public,
         }
