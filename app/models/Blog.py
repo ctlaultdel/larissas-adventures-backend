@@ -7,7 +7,7 @@ class Blog(db.Model):
     publication_date = db.Column(db.DateTime, default=datetime.now())
     adventure = db.relationship("Adventure", back_populates="adventure")
     adventure_id = db.Column(db.Integer, db.ForeignKey("adventure.id"))
-    contents = db.relationship("Content", back_populates="content")
+    contents = db.relationship("Content", back_populates="blog")
 
     def to_dict(self):
         """

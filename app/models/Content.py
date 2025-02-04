@@ -6,8 +6,8 @@ class Content(db.Model):
     text = db.Column(db.String, nullable = True)
     figure = db.Column(db.LargeBinary, nullable=True)
     caption = db.Column(db.String, nullable=True)
+    blog_id = db.Column(db.Integer, db.ForeignKey("blog.id"), nullable=False)
     blog = db.relationship("Blog", back_populates="contents")
-    blog_id = db.Column(db.Integer, db.ForeignKey("blog.id"))
 
     def to_dict(self):
         """
