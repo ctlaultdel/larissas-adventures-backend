@@ -13,9 +13,9 @@ class Adventure(db.Model):
         Returns Adventure JSON serializable data
         """
         return {
+            "id": self.id,
             "name": self.name,
             "img": self.convert_base64(),
-            "blog_id": self.blog.id,
             "public": self.public,
         }
     
