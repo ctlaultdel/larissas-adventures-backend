@@ -1,23 +1,21 @@
 import base64
 from app import db
-from flask import request
 
 class Adventure(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String, nullable=False)
     img = db.Column(db.LargeBinary, nullable=False)
-    path = db.Column(db.Text, nullable=True)
     public = db.Column(db.Boolean, default='true')
+    blog = db.relationship("Blog", back_populates="blog")
 
     def to_dict(self):
         """
         Returns Adventure JSON serializable data
         """
         return {
-            "id": self.id,
             "name": self.name,
-            "path": self.path,
             "img": self.convert_base64(),
+            "blog_id": self.blog.id,
             "public": self.public,
         }
     
