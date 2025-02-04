@@ -5,7 +5,7 @@ class Blog(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String, nullable=False)
     publication_date = db.Column(db.DateTime, default=datetime.now())
-    adventure = db.relationship("Adventure", back_populates="adventure")
+    adventure = db.relationship("Adventure", back_populates="blog")
     adventure_id = db.Column(db.Integer, db.ForeignKey("adventure.id"))
     contents = db.relationship("Content", back_populates="blog")
 

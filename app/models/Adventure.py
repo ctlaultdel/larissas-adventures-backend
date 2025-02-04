@@ -6,7 +6,7 @@ class Adventure(db.Model):
     name = db.Column(db.String, nullable=False)
     img = db.Column(db.LargeBinary, nullable=False)
     public = db.Column(db.Boolean, default='true')
-    blog = db.relationship("Blog", back_populates="blog")
+    blog = db.relationship("Blog", back_populates="adventure")
 
     def to_dict(self):
         """
