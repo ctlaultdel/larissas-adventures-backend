@@ -20,9 +20,12 @@ def create_app(test_config=None):
 
     # register models
     from app.models.Adventure import Adventure
+    from app.models.Blog import Blog
+    from app.models.Content import Content
 
     # register adventure routes
-    from .routes import adventures_bp
+    from .routes import adventures_bp, blog_bp
     app.register_blueprint(adventures_bp)
+    app.register_blueprint(blog_bp)
 
     return app
