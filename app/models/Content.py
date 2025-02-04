@@ -14,6 +14,7 @@ class Content(db.Model):
         Returns dict of content data including binary img data into base64 str
         """
         return {
+            "id": self.id,
             "text": self.text,
             "figure": self.convert_base64(),
             "caption": self.caption,
