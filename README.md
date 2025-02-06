@@ -11,5 +11,4 @@ Tech Stack: Python (Flask), PostgreSQL, LargeBinary database storage for images
 - Returns object of blog data associated with the provided adventure_id. The blog data object includes: title, publication_date (from blog table) and array of content objects (from content table): id, text, figure, caption. Content arrays are variable in size as a blog can have several iterations of text-figure-caption with any being nullable.
 
 ## Database Schema
-
-[Adventure_Blog_DB.drawio.pdf](https://github.com/user-attachments/files/18682649/Adventure_Blog_DB.drawio.pdf)
+![Adventure_Blog_DB drawio (1)](https://github.com/user-attachments/assets/87298e63-ab04-4d87-a67a-38abd81f6d51)
