@@ -10,7 +10,7 @@ blog_bp = Blueprint("blog", __name__, url_prefix="/blogs")
 # adventures
 @adventures_bp.route("", methods=["GET"])
 def get_adventures():
-    adventures = Adventure.query.all()
+    adventures = Adventure.query.order_by(Adventure.id).all()
     response = []
     for adv in adventures:
         response.append(adv.to_dict())
