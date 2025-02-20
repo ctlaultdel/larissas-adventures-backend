@@ -15,6 +15,6 @@ class Blog(db.Model):
         """
         return {
             "title": self.title,
-            "publication_date": self.publication_date,
+            "publication_date": self.publication_date.strftime("%B %d, %Y"),
             "content": [],
         }
