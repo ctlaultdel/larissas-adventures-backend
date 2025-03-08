@@ -5,9 +5,12 @@ class Adventure(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String, nullable=False)
     img = db.Column(db.LargeBinary, nullable=False)
-    alt_name = db.Column(db.String, default=''.join([char if char.isalpha() else '_' for char in name]))
+    alt_name = db.Column(db.String, unique=True)
     public = db.Column(db.Boolean, default='true')
     blog = db.relationship("Blog", back_populates="adventure")
+
+    def __init__(self):
+        self.alt_name = ''.join([char if char.isalpha() else '_' for char in self.name])
 
     def to_dict(self):
         """
