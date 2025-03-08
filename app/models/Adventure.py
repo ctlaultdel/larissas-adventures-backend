@@ -5,6 +5,7 @@ class Adventure(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String, nullable=False)
     img = db.Column(db.LargeBinary, nullable=False)
+    alt_name = db.Column(db.String, default=''.join([char if char.isalpha() else '_' for char in name]))
     public = db.Column(db.Boolean, default='true')
     blog = db.relationship("Blog", back_populates="adventure")
 
@@ -15,6 +16,7 @@ class Adventure(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "url_name": self.url_name,
             "img": self.convert_base64(),
             "public": self.public,
         }
