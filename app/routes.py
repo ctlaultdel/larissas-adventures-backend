@@ -28,7 +28,8 @@ def get_blog_content():
     name_query = request.args.get("name")
     
     if name_query:
-        blogs = Blog.query.filter_by(alt_name=name_query)
+        adventure = Adventure.query.filter_by(alt_name=name_query).first()
+        blogs = Blog.query.filter_by(adventure_id=adventure.id)
     else:
         blogs = Blog.query.order_by(Blog.id).all()
 

@@ -19,7 +19,7 @@ class Adventure(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "url_name": self.url_name,
+            "alt_name": self.alt_name,
             "img": self.convert_base64(),
             "public": self.public,
         }
