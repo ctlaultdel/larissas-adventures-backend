@@ -15,4 +15,4 @@ Tech Stack: Python (Flask), PostgreSQL, LargeBinary database storage for images
 - Ability to provide query params for filtering blog by adventure alt_name e.g. `blogs?name={alt_name}`
 
 ## Database Schema
-[Database_Scheme.pdf](https://github.com/user-attachments/files/19146177/Database_Scheme.pdf)
+![Database_Scheme (1)](https://github.com/user-attachments/assets/1376242f-f2a1-401b-97c0-238916a40e52)
